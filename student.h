@@ -13,6 +13,11 @@ public:
   void addGrade(double);
   double getScore();
   vector <double> grades;
+  bool added;
+  student ()
+  {
+    added = false;
+  }
 
 private:
   string firstName;

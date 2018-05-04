@@ -26,13 +26,13 @@ void student::addGrade(double z)
 {
 
   grades.push_back(z);
-
+  added = true;
 }
 
 double student::getScore()
 {
   double add;
-  double gradeTotal;
+  double gradeTotal=0;
   double gradeAverage;
 
   for (int i=0; i<grades.size(); i++)
@@ -40,8 +40,16 @@ double student::getScore()
     gradeTotal=grades[i]+add;
     add=gradeTotal;
   }
-
-  gradeAverage = gradeTotal/grades.size();
+  
+  if (added==true)
+  {
+    gradeAverage = gradeTotal/grades.size();
+  }  
+  else
+  {
+    gradeAverage = 0;
+  }
+  
   return gradeAverage;
 
 }
